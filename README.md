@@ -11,7 +11,7 @@ To install dependencies from `Gemfile`:
 bundle install
 ```
 
-### Running application and test
+## Running application and test
 
 #### Through Rake
 
@@ -29,6 +29,24 @@ And in order to run all tests inside `spec/` folder, you need to run:
 ```
 bundle exec rspec
 ```
+
+## Packaging and deploy
+
+For packaging we use Docker and enable few possibilities of deployment like AWS elastic beanstalk, AWS ECS and Kubernetes.
+
+The Rakefile have few utility task to generate and run the project:
+
+### Build Image
+`rake docker:build`
+
+### Run Image
+`rake docker:run`
+
+You can override puma threads and workers by setting this variables on `docker run`, useful for production:
+
+- PUMA_THREADS
+- WORKERS
+
 
 ## App structure
 

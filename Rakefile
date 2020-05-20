@@ -4,6 +4,16 @@ task :run do
   sh 'rackup config.ru'
 end
 
+namespace :docker do
+  task :build do
+    sh 'docker build -t github_repos .'
+  end
+
+  task :run do
+    sh 'docker run -p 3000:3000 github_repos'
+  end
+end
+
 require 'rspec/core'
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec) do |spec|
