@@ -28,7 +28,7 @@ class Server < Sinatra::Base
 
   # Routes
   get '/' do
-    @resp = Github.new(github_client).search(params['q'])
+    @result_items = Github.new(github_client).search(params['q'])
     erb :index
   end
 end

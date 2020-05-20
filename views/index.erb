@@ -1,18 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.1/dist/terminal.min.css"/>
   <meta charset="UTF-8">
   <title>Github Repo Search</title>
 </head>
 <body>
-<form action="/" method="get">
-  <label for="search">Search for:</label>
-  <input type="search" name="q" id="search"/>
-  <input type="submit" value="Submit"/>
-</form>
+<div class="container">
+  <div class="components components-grid">
+    <% if @result_items and @result_items[:error] %>
+      <section>
+        <div class="terminal-alert terminal-alert-error"><%= @result_items[:error] %></div>
+      </section>
+    <% end %>
+    <aside id="search">
+      <h2>Search</h2>
+      <form action="/" method="get">
+        <fieldset>
+          <div class="form-group">
+            <label for="search">Search for:</label>
+            <input type="search" name="q" id="search" value="<%= params['q'] %>"/>
+          </div>
+          <button class="btn btn-default" type="submit" role="button" name="submit" id="submit">Submit</button>
+        </fieldset>
+      </form>
+    </aside>
 
-<% if @resp %>
-  <%= @resp %>
-<% end %>
+    <hr/>
+
+    <main>
+      <section>
+        <header>
+          <h2 id="github-results">Github Results</h2>
+        </header>
+        <table>
+          <caption>
+            Github Repositories results
+          </caption>
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>URL</th>
+          </tr>
+          </thead>
+          <% if @result_items %>
+            <tbody>
+            <% @result_items[:items].each do |item| %>
+              <tr>
+                <th><%= item[:name] %></th>
+                <td><%= item[:description] %></td>
+                <td><a href="<%= item[:url] %>"><%= item[:url] %></a></td>
+              </tr>
+            <% end %>
+            </tbody>
+          <% end %>
+        </table>
+      </section>
+    </main>
+  </div>
+</div>
 </body>
 </html>

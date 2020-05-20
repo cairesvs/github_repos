@@ -6,10 +6,9 @@ require 'dotenv'
 
 class GithubClient
   def search_repositories(query)
-    response = connection.get 'search/repositories' do |req|
+    connection.get 'search/repositories' do |req|
       req.params[:q] = query
     end
-    JSON.parse(response.body)
   end
 
   private
