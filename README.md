@@ -2,6 +2,18 @@
 
 Simple github repositories actions.
 
+## ToC
+
+- [github repos](#github-repos)
+  * [Setup](#setup)
+  * [Running application and test](#running-application-and-test)
+      - [Through Rake](#through-rake)
+      - [Manual](#manual)
+  * [Packaging and deploy](#packaging-and-deploy)
+    + [Build Image](#build-image)
+    + [Run Image](#run-image)
+  * [App structure](#app-structure)
+
 ## Setup
 
 You need to have 'ruby' `v2.6.4`.
