@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    backports (3.17.1)
     coderay (1.1.1)
     diff-lcs (1.2.5)
     dotenv (2.1.1)
@@ -9,9 +8,10 @@ GEM
       multipart-post (>= 1.2, < 3)
     json (2.0.2)
     method_source (0.8.2)
-    multi_json (1.14.1)
+    multi_json (1.15.0)
     multipart-post (2.0.0)
-    mustermann (1.0.3)
+    mustermann (3.0.0)
+      ruby2_keywords (~> 0.0.1)
     nio4r (2.5.2)
     oj (3.10.6)
     ougai (1.8.5)
@@ -26,8 +26,8 @@ GEM
     puma-metrics (1.1.0)
       prometheus-client (~> 0.10)
       puma (>= 3.0)
-    rack (2.2.2)
-    rack-protection (2.0.5)
+    rack (2.2.4)
+    rack-protection (3.0.4)
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -45,20 +45,20 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
-    sinatra (2.0.5)
-      mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.5)
+    ruby2_keywords (0.0.5)
+    sinatra (3.0.4)
+      mustermann (~> 3.0)
+      rack (~> 2.2, >= 2.2.4)
+      rack-protection (= 3.0.4)
       tilt (~> 2.0)
-    sinatra-contrib (2.0.5)
-      backports (>= 2.8.2)
+    sinatra-contrib (3.0.4)
       multi_json
-      mustermann (~> 1.0)
-      rack-protection (= 2.0.5)
-      sinatra (= 2.0.5)
-      tilt (>= 1.3, < 3)
+      mustermann (~> 3.0)
+      rack-protection (= 3.0.4)
+      sinatra (= 3.0.4)
+      tilt (~> 2.0)
     slop (3.6.0)
-    tilt (2.0.9)
+    tilt (2.0.11)
 
 PLATFORMS
   ruby
